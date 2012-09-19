@@ -13,12 +13,23 @@ describe "StaticPages" do
       #response.status.should be(200)
     end
     
-    it "should have the title 'home'" do
+    it "should have the h1 'sample app'" do
+		visit '/staticpages/home'
+		page.should have_selector('h1',
+                    :text => 'sample app')
+		end
+		
+	it "should have the base title" do
 		visit '/staticpages/home'
 		page.should have_selector('title',
-                    :text => "ruby on rails tutorial sample app | home")
-	end
-
+							:text => "ruby on rails tutorial sample app")
+		end
+	
+	it "should not have a custom page title" do
+		visit '/staticpages/home'
+		page.should_not have_selector('title', :text => "| home")
+		end
+				
   end
   
   

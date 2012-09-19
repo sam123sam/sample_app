@@ -1,11 +1,5 @@
 <% provide(:title, 'help') %> 
 
-<html> 
-	<head>
-		<title>ruby on rails tutorial sample app | <%= yield(:title) %> </title> 	
-	</head> 
-	<body>
-
 <h1>help</h1>
 
 <p>Get help on the Ruby on Rails Tutorial at the
@@ -17,9 +11,6 @@
 		<a  href="http://railstutorial.org/book" > Rails Tutorial book </a> 
 		
 	</p>
-
-</body>
-</html> 
 
 
  
