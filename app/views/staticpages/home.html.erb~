@@ -1,13 +1,17 @@
 
+ 
+ <title>tripple</title>
+ 
+	<div class="center hero-unit">
 
-		<h1>sample app</h1>
+		<h1> Welcome to tripple dating </h1>
 
-			<p>
-
-			This is the home page for the
-
-			<a href="http://railstutorial.org/">ruby on rails sample app
-
-			</a> 
-
-			</p>
+		<p><p><h2>where people meet</h2></p></p>
+							
+		<%= link_to "Sign up", signup_path, :class=> "btn btn-large btn-primary" %>
+							
+	</div>
+	
+	
+	
+					

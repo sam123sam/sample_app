@@ -3,66 +3,39 @@ require 'spec_helper'
 describe "StaticPages" do
 
   describe "home page" do
-  
-      it "should have the content 'sample app'" do 
-    		visit '/staticpages/home'
-    		page.should have_content('sample app')
-    		    	   	
+  	before { visit root_path }
+	  
+      it { should have_selector('h2', :text=> 'where people meet')} 
+    	it { should have_selector('h1', :text=> 'Welcome to tripple dating')}	
+    	it { should have_selector('title', :text=> "tripple")}
+		it { should_not have_selector('title', :text=> "home")}
+    end		
+     	
+    
+     
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       #get static_pages_index_path
       #response.status.should be(200)
-    end
-    
-    it "should have the h1 'sample app'" do
-		visit '/staticpages/home'
-		page.should have_selector('h1',
-                    :text => 'sample app')
-		end
-		
-	it "should have the base title" do
-		visit '/staticpages/home'
-		page.should have_selector('title',
-							:text => "ruby on rails tutorial sample app")
-		end
-	
-	it "should not have a custom page title" do
-		visit '/staticpages/home'
-		page.should_not have_selector('title', :text => "| home")
-		end
-				
-  end
-  
-  
+  		
+	  
 	describe "help page" do
-	
-		it "should have the content 'help'" do
-			visit '/staticpages/help'
-			page.should have_content('help')
-		end
+		before { visit help_path}
+		it { should have_content('help')}
+		it { should have_selector('title', :text=> 'Help')}
+	end			
 		
-		it "should have the title 'help'" do
-			visit '/staticpages/help'
-			page.should have_selector('title',
-										:text => "ruby on rails tutorial sample app | help")
-		end
-			
-	 end 
-  
-  describe "about page" do
-  	it "should have the content 'about us'" do  
-  		visit '/staticpages/about'
-  		page.should have_content('about us')
-  	end
+	
+	describe "about page" do
+		it {should have_selector('title', :text=> 'About Us')}
+		it {should have_selector('h1', :text=> 'About Us')}
+	end
 
-	it "should have the title 'about us'" do
-		visit '/staticpages/about'
-		pages.should have_selector('title',
-									:text => "ruby on rails tutorial sample app | about us")	
+	
+	describe "contact page" do
+		it {should have_selector('h1', :text=> 'Contact')}
+		it {should have_selector('title', :text=> 'Contact')}
+	end
 
-  	end 
-  
   end
-    	
- end
 
 

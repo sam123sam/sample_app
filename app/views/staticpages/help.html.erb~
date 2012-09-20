@@ -1,6 +1,6 @@
-<% provide(:title, 'help') %> 
+<% provide(:title, 'Help') %> 
 
-<h1>help</h1>
+<h1>Tripple help page</h1>
 
 <p>Get help on the Ruby on Rails Tutorial at the
 
