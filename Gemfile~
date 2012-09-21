@@ -70,3 +70,5 @@ end
 
 
 gem "therubyracer", :require => 'v8'
+
+gem "twitter-bootstrap-rails"
