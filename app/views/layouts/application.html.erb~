@@ -7,7 +7,7 @@
    
    <title><%= full_title(yield(:title)) %></title>
    
-    // <!-- <<title><%= content_for?(:title) ? yield(:title) : "tripple	" %></title> -->
+    <!-- <<title><%= content_for?(:title) ? yield(:title) : "tripple	" %></title> -->
     
     <%= csrf_meta_tags %>
 
@@ -48,11 +48,15 @@
   </head>
   <body>
 	<%= render 'layouts/header' %>	
-       
+		       
     <div class="container">
-        <%= bootstrap_flash %>
-        <%= yield %>
-        <%= render 'layouts/footer' %>
+	  	<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>"><%= value %></div>
+		<%= end %>        
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development?%> 
+        
      </div>
       
     <!-- Javascripts
