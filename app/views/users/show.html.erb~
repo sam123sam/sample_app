@@ -27,6 +27,3 @@
 	
 </div>
  
-<p>Email: <%= @user.email %></p> 
-<p>University: <%= @user.University %></p>
-<p>High school: <%= @user.Highschool %></p>

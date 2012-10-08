@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+gem 'gravatar_image_tag'
+
 gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -73,3 +75,6 @@ end
 gem "therubyracer", :require => 'v8'
 
 gem "twitter-bootstrap-rails"
+
+
+
